@@ -20,10 +20,10 @@ public class TaskConfig {
             UserRepository userRepository
     ) {
         return args -> {
-            // List<Task> taskList = TaskFactory.create(10);
-            // taskRepository.saveAll(taskList);
-            // List<User> userList = UserFactory.create(10);
-            // userRepository.saveAll(userList);
+              List<Task> taskList = TaskFactory.create(10);
+             taskRepository.saveAll(taskList);
+             List<User> userList = UserFactory.create(10);
+             userRepository.saveAll(userList);
         };
     }
 }

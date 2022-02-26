@@ -1,8 +1,11 @@
 package com.g1dra.crm.models;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import javax.servlet.http.HttpServletRequest;
+import java.net.InetAddress;
 import java.time.LocalDateTime;
 
 @ToString
@@ -12,7 +15,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "App_user")
 public class User {
-
     public User() {
     }
 
@@ -62,4 +64,8 @@ public class User {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    public String getImagePath() {
+        return "http://" + InetAddress.getLoopbackAddress().getHostName() + ":8080/images/libero.png";
+    }
 }
